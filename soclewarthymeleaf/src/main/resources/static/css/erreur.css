@@ -1,0 +1,13 @@
+.login {
+	margin-top : 7%;	
+}
+
+.login .logo-app .logo-app-texte:before {
+	content : url(../images/icone-thelem.png);
+	vertical-align: middle;
+}
+
+.login .footer {
+	margin-top : 45px;
+	margin-bottom : 20px;	
+}

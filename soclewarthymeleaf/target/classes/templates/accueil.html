@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<head th:replace="template_defaut.html :: head">
+	</head>
+</head>
+<body>
+	<!-- Header de la page -->
+	<header th:replace="template_defaut.html :: top"></header>
+	<div id="contentHeader">
+		<div class="row">
+			<div class="col-xs-12">
+				<h4>
+					<!-- <s:text name="accueil.header.titre" />-->
+				</h4>
+			</div>
+		</div>
+	</div>
+	<!-- Contenu de la page -->
+	<div id="contentBody">
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- Inserer le contenu de votre page ici -->
+			</div>
+		</div>
+	</div>
+	<footer th:replace="template_defaut.html :: bottom"></footer>
+	<!-- Javascript -->
+	<div th:replace="template_defaut.html :: script"></div>
+	<div id="javascriptPage">
+		<script type="text/javascript">
+			// Met en surbrillance l'onglet
+			$('.sidebar .sidebar-accueil').addClass("active");
+		</script>
+	</div>
+</body>
+</html>

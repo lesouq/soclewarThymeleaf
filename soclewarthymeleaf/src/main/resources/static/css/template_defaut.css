@@ -1,0 +1,127 @@
+/* NAVBAR */
+.navbar {
+	background-color : #A38C89;
+	margin-bottom : 0px;
+	border: none;
+}
+
+.navbar .navbar-header {
+	margin-left : -15px;
+	background-color: #F6F4F3;
+    float: left;
+    height: 57px;
+    width: 175px;   
+}
+
+.navbar .navbar-header .navbar-brand {
+	width: 100%;
+    text-align: center;
+    margin : auto;
+    text-transform: capitalize;
+}
+
+.navbar .navbar-nav.navbar-left {
+	margin-left : 2%; 
+}
+
+.navbar  .navbar-nav>li>a {
+	height: 57px;
+	line-height: 28px;
+	color : white;
+	text-transform: uppercase;
+	font-size: 16px !important;
+}
+
+.navbar  .navbar-nav>li>a#retour:before {
+	content : url(../images/back.png);
+}
+
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover {
+    color : white;
+    background: rgba(0,0,0,0.1);
+    outline: none;
+}
+
+/* SIDEBAR */
+.sidebar {
+	background-color: #F6F4F3;
+	position: absolute;
+	left: 0px;
+	top : 0px;
+	min-height: 100%;
+	width: 175px;
+	padding-bottom: 150px;
+    padding-top: 75px;
+	-webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
+	-moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
+	-o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
+	transition: transform .3s ease-in-out,width .3s ease-in-out;
+}
+
+.sidebar-menu>ul {
+	overflow: hidden;
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-menu>ul>li {
+	margin-top: 10px;
+}
+
+.sidebar-menu>ul>li>a {
+	color: #380500;
+	padding: 16px 10px;
+	display: block;
+    min-height: 60px;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-menu>ul>li>a:hover, .sidebar-menu>ul>li>a.active {
+    color: #D63D27;
+    background: #E9E4E2;
+    border-left-color: #D63D27;
+    text-decoration : none;
+}
+
+.sidebar-menu>ul>li>a:before {
+	vertical-align: middle;
+	margin-right : 15px;
+}
+
+.sidebar-menu>ul>li>a.sidebar-accueil:before {
+	content : url(../images/home.png);
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    padding: 30px 10px;
+}
+
+/* MAIN/FOOTER */
+main, footer {
+	webkit-transition: -webkit-transform .3s ease-in-out,margin .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out,margin .3s ease-in-out;
+    -o-transition: -o-transform .3s ease-in-out,margin .3s ease-in-out;
+    transition: transform .3s ease-in-out,margin .3s ease-in-out;
+    margin-left: 175px;
+    z-index: 820;
+    min-height : 100%;
+}
+
+main section, footer section {
+	padding: 20px 2% 20px 2%;
+}
+
+/* FOOTER */
+footer {
+	background: #fff;
+    border-top: none;
+}
+
+footer a, footer a:hover {
+	color: #380500;
+	text-decoration:none;
+}

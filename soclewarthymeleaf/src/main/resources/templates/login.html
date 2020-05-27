@@ -1,0 +1,97 @@
+<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="template_login.html :: head">
+
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  
+</head>
+<div class="login" th:replace="template_login.html :: login"></div>
+<div id="contentBody">
+
+	<!-- MESSAGE -->
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<h4>
+				Bonjour,<br/>
+				Veuillez entrer vos identifiants
+			</h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<!-- Message d'authentification -->
+			<c:if test='${param.echec != null}'>
+				<p class="text-danger">
+					<s:text name="login.message.echec" />
+				</p>
+			</c:if>
+			<c:if test='${param.logout != null}'>
+				<p class="text-success">
+					<s:text name="login.message.deconnecte" />
+				</p>
+			</c:if>
+			<c:if test='${param.invalid != null}'>
+				<p class="text-warning">
+					<s:text name="login.message.session.expire" />
+				</p>
+			</c:if>
+			<c:if test='${param.forbidden != null}'>
+				<p class="text-danger">
+					<s:text name="login.message.acces.refuse" />
+				</p>
+			</c:if>
+		</div>
+	</div>
+
+	<s:form name="f" action="../j_spring_security_check" method="post"
+		theme="simple">
+		<div class="row inputs">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label for="j_spring_security_check_j_username"><s:text name="user" /></label>
+					<input type="text" name="j_username" class="form-control input-lg"
+						value='<s:if test="erreurAuthentification">${SPRING_SECURITY_LAST_USERNAME}</s:if>'
+						id="j_spring_security_check_j_username" autocomplete="username" />
+				</div>
+		
+				<div class="form-group">
+					<label for="j_spring_security_check_j_password"><s:text name="password" /></label>
+					<input type="password" name="j_password"
+						id="j_spring_security_check_j_password" class="form-control input-lg"
+						autocomplete="current-password"/>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row submit">
+			<div class="col-xs-8 col-xs-offset-2">
+				<s:submit cssClass="btn btn-primary btn-lg btn-block" hidefocus="true" tabindex="-1" value="Valider"></s:submit>
+			</div>
+		</div>
+		
+		<!-- csrf -->
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
+	</s:form>
+</div>
+<div id="javascriptPage">
+	<script type="text/javascript">
+		$(function() {
+			focusInputUsername();
+		});
+
+		function focusInputUsername() {
+			$("[name='j_username']").focus();
+		}
+
+		function submitLogin() {
+			$("[name='f']").submit();
+		}
+	</script>
+</div>
+</html>

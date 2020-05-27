@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+ 	<html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org"> 
+<head th:fragment="head">
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-store" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+		
+		<!-- Required meta tags -->
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+		<!-- <title th:text="${template.nom.application}"></title> -->
+		<title>Thelem</title>
+		
+		<!-- fanicon -->
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+	
+		<!-- Pour iPad 3ème génération avec Retina -->
+	    <link href="/images/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+	    <!-- Pour iPhone avec Retina -->
+	    <link href="/images/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+	    <!-- Pour iPad 1ère et 2ème génération -->
+	    <link href="/images/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+	    <!-- Pour iPhone non-Retina, iPod Touch, et Android 2.1+ -->
+	    <link href="/images/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
+		
+	    <!-- bootstrap -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	    <!-- Optional JavaScript -->
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	    <!-- CSS -->
+		<link rel="stylesheet" href="/css/template_defaut.css">
+		<!-- JS -->
+		<!-- <link rel="stylesheet" href="/js/application.js"> -->
+	  
+		
+		<script>
+	        function logout() {
+	            document.getElementById("logoutForm").submit();
+	        }
+	    </script>
+		
+		<!-- <sitemesh:write property='head' /> -->
+	</head>
+<body>
+	<header th:fragment="top">
+			<!-- Barre de navigation -->
+			<nav class="navbar navbar-default navbar-static-top">
+				<div class="container-fluid">
+				    <!-- LOGO -->
+				    <div class="navbar-header">
+						<!--  <s:a href="%{accueil}" cssClass="navbar-brand" >-->	
+							<!-- <strong><s:text name="template.nom.application"/></strong>
+						</s:a>-->
+				    </div>
+				    
+				    <!-- CONTENU NAVBAR -->
+				    <div class="collapse navbar-collapse">
+				    	<!-- ELEMENTS GAUCHE -->
+				    	<ul class="nav navbar-nav navbar-left">
+				    	</ul>
+				    	
+				    	<!-- ELEMENTS DROITE -->
+				    	<ul class="nav navbar-nav navbar-right">
+				    		<!-- LOGOUT -->
+				    		<li>
+				    			<a href="#" onclick="logout();">
+									<img src="/images/logout.png" alt="logout">
+									<!-- <s:form action="/j_spring_security_logout" method="post" id="logoutForm">-->
+										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+									<!-- </s:form> -->
+								</a>
+				    		</li>
+				    	</ul>
+				    </div>		
+				</div>
+		   </nav>
+		    <!-- SIDEBAR -->
+		 <aside class="sidebar sidebar-left"></aside> 
+			<!-- MENU -->
+			<section class="sidebar-menu">
+				<ul>
+					<li>
+						<!--  <s:a href="%{accueil}" cssClass="sidebar-accueil">Accueil</s:a>-->
+					</li>   
+				</ul>
+			</section>
+		</header>
+		 
+			<!-- SIDEBAR FOOTER -->
+			<section class="sidebar-footer center-block">
+				<img src="media/images/logo-thelem.png"/>" class="img-responsive" alt="Thelem assurances"
+			</section>
+		<!-- <aside> -->
+		<!-- CONTENU PRINCIPAL -->
+		<main>
+			
+			<!-- TITRE -->
+			<section>
+				<div class="content container-fluid">
+			   		<!-- <sitemesh:write property='div.contentHeader' /> -->	
+				</div>
+			</section>
+			
+			<!-- CONTENU -->
+			<section>
+				<div class="content container-fluid">		   			
+			   		<!--  <sitemesh:write property='div.contentBody' />	-->
+				</div>
+			</section>
+		</main>
+		<!-- FOOTER -->
+		<footer id="footer" th:fragment="bottom">
+			<section>	
+				<div class="container-fluid">
+			   		<div class="row">
+			   			<div class="col-xs-4 col-xs-offset-4 text-center">
+				   			2019 © <a href="http://www.thelem-assurances.fr/">Thélem assurances</a>	
+				   		</div>
+				   		<div class="col-xs-4 text-right hidden-xs">   		
+				   			<!-- ${project.version}-->
+				   		</div>
+			   		</div>
+				</div>
+			</section>
+	    </footer> 
+	    </body>
+	    <div th:fragment="script">
+	    <!-- JS -->
+		<!-- <script src="/media/lib/jquery/js/jquery.min.js" type="text/javascript"></script> -->	
+		<!-- <script src="/media/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> -->
+		<!-- <script src="/media/js/application.js" type="text/javascript"></script> -->
+		
+		<script>
+			$(document).ready(function() {
+				placerFooter();      
+			});
+		</script>
+		</div>
+</html>
+
+

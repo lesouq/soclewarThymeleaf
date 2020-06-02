@@ -1,7 +1,8 @@
 <html lang="fr" dir="ltr" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="template_login.html :: head"></head>
-<div class="login" th:replace="template_login.html :: login"></div>
+<div th:replace="template_login.html :: login"></div>
+
 <div id="contentBody">
 
 	<!-- MESSAGE -->
@@ -41,19 +42,17 @@
 	</div>
 
 	<!--  <form name="f" action="../j_spring_security_check" method="post" theme="simple">-->
-	<form id="login-form" class="form" th:action="@{/login.html}" method="post" theme="simple">
+	<form name="f" th:action="@{/login.html}" method="post" theme="simple">
 		<div class="row inputs">
 			<div class="col-xs-12">
 				<div class="form-group">
-					<!-- <label for="j_spring_security_check_j_username"><s:text name="user" /></label>-->
-					<!--  <label for="username">Utilisateur :</label><br> <input type="text" name="username" id="username" class="form-control"> -->
+					<label for="j_spring_security_check_j_username"><s:text name="user" /></label>
 					<input type="text" name="j_username" class="form-control input-lg"
 						id="j_spring_security_check_j_username" autocomplete="username" />
 				</div>
 		
 				<div class="form-group">
-					<!-- <label for="j_spring_security_check_j_password"><s:text name="password" /></label> -->
-					<!-- <label for="password">Mot de passe :</label><br> <input type="password" name="j_password" id="j_spring_security_check_j_password" class="form-control input-lg" autocomplete="current-password"> -->
+					<label for="j_spring_security_check_j_password"><s:text name="password" /></label> 
 					<input type="password" name="j_password"
 						id="j_spring_security_check_j_password" class="form-control input-lg"
 						autocomplete="current-password"/>

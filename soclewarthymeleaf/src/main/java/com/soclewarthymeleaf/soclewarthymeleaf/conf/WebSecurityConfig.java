@@ -15,12 +15,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 	    http
 	    	.authorizeRequests()
-	        .antMatchers("/login1/**").permitAll()
+	        .antMatchers("/login/**").permitAll()
 	        .antMatchers("/accueil/**").hasAnyRole("ADMIN","USER")
 	            .and()
 	        .formLogin()
 	        .loginPage("/login.html")
 	        .defaultSuccessUrl("/accueil", true)
+	        .failureUrl("/login.html?error=true")
 	            .and()
 	        .logout()
 	        .logoutSuccessUrl("/login")
@@ -31,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	
 	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	protected void configure( final AuthenticationManagerBuilder auth) throws Exception {
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		auth.inMemoryAuthentication()
 	    .withUser("prothelem")

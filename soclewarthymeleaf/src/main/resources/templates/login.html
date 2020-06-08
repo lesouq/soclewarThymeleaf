@@ -3,10 +3,10 @@
 <head th:replace="template_login.html :: head"></head>
 <div th:replace="template_login.html :: login"></div>
 
-<div id="contentBody">
+<!-- <div id="contentBody"> -->
 
 	<!-- MESSAGE -->
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-xs-12 text-center">
 			<h4>
 				Bonjour,<br/>
@@ -16,9 +16,9 @@
 	</div>
 
 	<div class="row">
-		<div class="col-xs-12 text-center">
+		<div class="col-xs-12 text-center"> -->
 			<!-- Message d'authentification -->
-			<c:if test='${param.echec != null}'>
+			<!--  <c:if test='${param.echec != null}'>
 				<p class="text-danger">
 					<s:text name="login.message.echec" />
 				</p>
@@ -39,10 +39,10 @@
 				</p>
 			</c:if>
 		</div>
-	</div>
+	</div> -->
 
 	<!--  <form name="f" action="../j_spring_security_check" method="post" theme="simple">-->
-	<form name="f" th:action="@{/login.html}" method="post" theme="simple">
+	<form name="f" th:action="@{/login1.html}" method="post">
 		<div class="row inputs">
 			<div class="col-xs-12">
 				<div class="form-group">

@@ -2,7 +2,6 @@ package com.soclewarthymeleaf.soclewarthymeleaf.conf;
 
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -21,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .formLogin()
 	        .loginPage("/login.html")
 	        .defaultSuccessUrl("/accueil", true)
-	        .failureUrl("/login.html?error=true")
+	        .failureUrl("/error.html?error=true")
 	            .and()
 	        .logout()
 	        .logoutSuccessUrl("/login")
